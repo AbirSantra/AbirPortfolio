@@ -2,7 +2,7 @@ import { defineConfig } from "sanity";
 import {deskTool} from 'sanity/desk'
 
 const config = defineConfig({
-  name: 'Abir Portfolio',
+  name: 'AbirPortfolio',
   title: 'AbirPortfolio',
 
   projectId: 'm1lgynxf',
