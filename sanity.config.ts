@@ -1,5 +1,6 @@
 import { defineConfig } from "sanity";
 import {deskTool} from 'sanity/desk'
+import schemas from "./sanity/schemas";
 
 const config = defineConfig({
   name: 'AbirPortfolio',
@@ -7,10 +8,12 @@ const config = defineConfig({
 
   projectId: 'm1lgynxf',
   dataset: 'production',
-  apiVersion: '2023-07-05',
+  apiVersion: '2023-08-15',
   basePath: '/admin',
 
   plugins: [deskTool()],
+
+  schema: {types: schemas}
 
 })
 
