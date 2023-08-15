@@ -53,6 +53,11 @@ const project = {
       title: 'Tools',
       type: 'array',
       of: [{type: 'reference', to: {type: 'tool'}}]
+    },
+    {
+      name: 'isFeatured',
+      title: 'Set Featured?',
+      type: 'boolean',
     }
   ]
 }
