@@ -51,8 +51,8 @@ const project = {
     {
       name: 'tools',
       title: 'Tools',
-      type: 'reference',
-      to: [{type: 'tool'}]
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'tool'}}]
     }
   ]
 }
