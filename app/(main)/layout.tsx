@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-Poppins">
+      <body className="bg-white font-Poppins text-slate-950 transition-colors duration-300 ease-in-out dark:bg-gray-950 dark:text-white">
         <header>
           <Navbar />
         </header>
