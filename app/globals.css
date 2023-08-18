@@ -9,5 +9,9 @@
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text;
+  @apply bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent;
+}
+
+.glassmorph {
+  @apply border-[1px] border-gray-300/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:bg-gray-900/60;
 }
