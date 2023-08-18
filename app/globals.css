@@ -3,3 +3,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-bg {
+  @apply bg-gradient-to-r from-sky-500 to-indigo-500;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-sky-500 to-indigo-500 text-transparent bg-clip-text;
+}
