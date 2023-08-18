@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import "../globals.css";
 
 export const metadata = {
@@ -12,7 +13,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-Poppins">{children}</body>
+      <body className="font-Poppins">
+        <header>
+          <Navbar />
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

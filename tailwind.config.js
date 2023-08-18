@@ -10,6 +10,9 @@ module.exports = {
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
       },
+      animation: {
+        "spin-once": "spin 0.25s ease-in-out",
+      },
     },
   },
   plugins: [],
