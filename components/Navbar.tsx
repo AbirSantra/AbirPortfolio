@@ -121,7 +121,7 @@ const Navbar = () => {
 
       {/* Menu */}
       <div
-        className={`linear fixed top-40 flex flex-col items-center justify-center gap-6 rounded-lg bg-gray-50 px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
+        className={`linear fixed top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-gray-50 px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
           isMenuOpen ? "left-6 opacity-100" : "-left-5 opacity-0"
         }`}
         onClick={toggleMenu}
