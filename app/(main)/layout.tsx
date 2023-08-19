@@ -13,11 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white font-Poppins text-gray-950 transition-colors duration-300 ease-in-out dark:bg-gray-950 dark:text-white">
-        <header>
+      <body className="relative overflow-x-hidden bg-gray-50 font-Poppins text-gray-950  transition-all duration-300 ease-linear dark:bg-gray-950 dark:text-white">
+        <header className="sticky top-0">
           <Navbar />
         </header>
-        <main>{children}</main>
+        <main className="mx-auto w-full max-w-[1140px]">{children}</main>
       </body>
     </html>
   );

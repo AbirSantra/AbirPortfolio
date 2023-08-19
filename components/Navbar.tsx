@@ -1,15 +1,30 @@
 "use client";
 import Link from "next/link";
-import { BsFillMoonStarsFill, BsGridFill, BsFillSunFill } from "react-icons/bs";
+import {
+  BsFillMoonStarsFill,
+  BsGridFill,
+  BsFillSunFill,
+  BsGrid,
+} from "react-icons/bs";
+import {
+  FaUser,
+  FaBriefcase,
+  FaUserGraduate,
+  FaTools,
+  FaPen,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import { HiRocketLaunch } from "react-icons/hi2";
 import Logo from "./Logo";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState<string | null>("dark");
-  console.log(theme);
+  const [theme, setTheme] = useState<string | null>(null);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  /* Theme Setter */
   useEffect(() => {
+    /* Theme Setter */
     const localTheme = localStorage.getItem("theme");
     if (localTheme) {
       if (localTheme === "light") {
@@ -33,6 +48,24 @@ const Navbar = () => {
     }
   }, []);
 
+  /* Menu Closer */
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        console.log("Click outside!");
+        setIsMenuOpen(false);
+      }
+    };
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isMenuOpen]);
+
   /* Theme switcher */
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -46,8 +79,13 @@ const Navbar = () => {
     }
   };
 
+  /* Menu Toggler */
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="flex h-16 w-full items-center justify-between px-6">
+    <nav className="glassmorph relative z-10 flex h-16 w-full items-center justify-between border-none bg-gray-50/60 px-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
       {/* Logo */}
       <Link href="/">
         <Logo />
@@ -61,9 +99,44 @@ const Navbar = () => {
             <BsFillMoonStarsFill className="animate-spin-once" />
           )}
         </button>
-        <button className="hover:animate-spin-once">
-          <BsGridFill />
+        <button onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <BsGrid className="animate-spin-once" />
+          ) : (
+            <BsGridFill className="animate-spin-once" />
+          )}
         </button>
+      </div>
+
+      {/* Menu */}
+      <div
+        className={`glassmorph linear fixed right-3 flex flex-col items-center justify-center gap-6 rounded-lg px-4 py-6 text-xl shadow-sm duration-150 ${
+          isMenuOpen ? "top-20 opacity-100" : "-top-96 opacity-0"
+        }`}
+        onClick={toggleMenu}
+        ref={menuRef}
+      >
+        <Link href="#about">
+          <FaUser />
+        </Link>
+        <Link href="#experience">
+          <FaBriefcase />
+        </Link>
+        <Link href="#education">
+          <FaUserGraduate />
+        </Link>
+        <Link href="#techstack">
+          <FaTools />
+        </Link>
+        <Link href="#projects">
+          <HiRocketLaunch />
+        </Link>
+        <Link href="#blogs">
+          <FaPen />
+        </Link>
+        <Link href="#contact">
+          <FaPhoneAlt />
+        </Link>
       </div>
     </nav>
   );
