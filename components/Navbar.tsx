@@ -17,6 +17,7 @@ import {
 import { HiRocketLaunch } from "react-icons/hi2";
 import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
+import { Tooltip } from "./Tooltip";
 
 const Navbar = () => {
   const [theme, setTheme] = useState<string | null>(null);
@@ -96,7 +97,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="glassmorph relative z-10 flex h-16 w-full items-center justify-between border-none bg-gray-50/60 p-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
+    <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-gray-50/60 p-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
       {/* Logo */}
       <Link href="/">
         <Logo />
@@ -121,7 +122,7 @@ const Navbar = () => {
 
       {/* Menu */}
       <div
-        className={`linear fixed top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-gray-50 px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
+        className={`fixed top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-white px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
           isMenuOpen ? "left-6 opacity-100" : "-left-5 opacity-0"
         }`}
         onClick={toggleMenu}
@@ -133,7 +134,9 @@ const Navbar = () => {
             key={index}
             className="duration-300 ease-in-out hover:text-sky-500"
           >
-            {item.icon}
+            <Tooltip text={item.name} direction="right">
+              {item.icon}
+            </Tooltip>
           </Link>
         ))}
       </div>

@@ -13,8 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative overflow-x-hidden bg-gray-50 font-Poppins text-gray-950  transition-all duration-300 ease-linear dark:bg-gray-950 dark:text-white">
-        <header className="sticky top-0">
+      <body className="relative bg-gray-50 font-Poppins text-gray-950  transition-all duration-300 ease-linear dark:bg-gray-950 dark:text-white">
+        <header className="sticky top-0 z-50">
           <Navbar />
         </header>
         <main className="mx-auto w-full max-w-[1140px]">{children}</main>
