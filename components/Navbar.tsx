@@ -84,8 +84,19 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  /* Menu List */
+  const menuList = [
+    { name: "About", icon: <FaUser />, link: "#about" },
+    { name: "Experience", icon: <FaBriefcase />, link: "#experience" },
+    { name: "Education", icon: <FaUserGraduate />, link: "#education" },
+    { name: "Tech Stack", icon: <FaTools />, link: "#techstack" },
+    { name: "Projects", icon: <HiRocketLaunch />, link: "#projects" },
+    { name: "Blogs", icon: <FaPen />, link: "#blogs" },
+    { name: "Contact", icon: <FaPhoneAlt />, link: "#contact" },
+  ];
+
   return (
-    <nav className="glassmorph relative z-10 flex h-16 w-full items-center justify-between border-none bg-gray-50/60 px-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
+    <nav className="glassmorph relative z-10 flex h-16 w-full items-center justify-between border-none bg-gray-50/60 p-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
       {/* Logo */}
       <Link href="/">
         <Logo />
@@ -110,33 +121,21 @@ const Navbar = () => {
 
       {/* Menu */}
       <div
-        className={`glassmorph linear fixed right-3 flex flex-col items-center justify-center gap-6 rounded-lg px-4 py-6 text-xl shadow-sm duration-150 ${
-          isMenuOpen ? "top-20 opacity-100" : "-top-96 opacity-0"
+        className={`linear fixed top-40 flex flex-col items-center justify-center gap-6 rounded-lg bg-gray-50 px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
+          isMenuOpen ? "left-6 opacity-100" : "-left-5 opacity-0"
         }`}
         onClick={toggleMenu}
         ref={menuRef}
       >
-        <Link href="#about">
-          <FaUser />
-        </Link>
-        <Link href="#experience">
-          <FaBriefcase />
-        </Link>
-        <Link href="#education">
-          <FaUserGraduate />
-        </Link>
-        <Link href="#techstack">
-          <FaTools />
-        </Link>
-        <Link href="#projects">
-          <HiRocketLaunch />
-        </Link>
-        <Link href="#blogs">
-          <FaPen />
-        </Link>
-        <Link href="#contact">
-          <FaPhoneAlt />
-        </Link>
+        {menuList.map((item, index) => (
+          <Link
+            href={item.link}
+            key={index}
+            className="duration-300 ease-in-out hover:text-sky-500"
+          >
+            {item.icon}
+          </Link>
+        ))}
       </div>
     </nav>
   );
