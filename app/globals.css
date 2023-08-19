@@ -4,19 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.gradient-bg {
-  @apply bg-gradient-to-r from-sky-500 to-indigo-500;
-}
-
-.gradient-text {
-  @apply bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent;
-}
-
-.glassmorph {
-  @apply border-[1px] border-gray-300/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:bg-gray-900/60;
+.section {
+  @apply flex w-full flex-col items-center justify-center p-4 md:p-8 lg:p-16;
 }
 
 @layer utilities {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-sky-500 to-blue-500;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-500 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .glassmorph {
+    @apply border-[1px] border-gray-300/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:bg-gray-900/60;
+  }
   ::-webkit-scrollbar {
     @apply w-1;
   }
@@ -26,6 +29,6 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply rounded-full bg-gradient-to-b from-sky-500 to-indigo-500;
+    @apply rounded-full bg-gradient-to-b from-sky-500 to-blue-500;
   }
 }
