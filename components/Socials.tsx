@@ -5,6 +5,7 @@ import InstagramIcon from "../public/images/instagram-icon.svg";
 import HashnodeIcon from "../public/images/hashnode-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
+import { Tooltip } from "./Tooltip";
 
 export const Socials = () => {
   const socialsList = [
@@ -38,8 +39,10 @@ export const Socials = () => {
     <div className="flex items-center justify-center gap-4 sm:gap-6">
       {socialsList.map((social, index) => {
         return (
-          <Link key={index} href={social.link}>
-            <Image src={social.icon} alt={social.name} className="w-8" />
+          <Link key={index} href={social.link} target="_blank">
+            <Tooltip text={social.name} direction="bottom">
+              <Image src={social.icon} alt={social.name} className="w-8" />
+            </Tooltip>
           </Link>
         );
       })}
