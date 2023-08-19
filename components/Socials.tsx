@@ -12,27 +12,27 @@ export const Socials = () => {
     {
       name: "Linkedin",
       icon: LinkedinIcon,
-      link: "https://www.abirsantra.com",
+      link: "https://www.linkedin.com/in/abirsantra",
     },
     {
       name: "Github",
       icon: GithubIcon,
-      link: "https://www.abirsantra.com",
+      link: "https://github.com/AbirSantra",
     },
     {
       name: "Hashnode",
       icon: HashnodeIcon,
-      link: "https://www.abirsantra.com",
+      link: "https://abirsantra.hashnode.dev",
     },
     {
       name: "Twitter",
       icon: TwitterIcon,
-      link: "https://www.abirsantra.com",
+      link: "https://twitter.com/the_codefreak",
     },
     {
       name: "Instagram",
       icon: InstagramIcon,
-      link: "https://www.abirsantra.com",
+      link: "https://www.instagram.com/thecodefreak",
     },
   ];
   return (
