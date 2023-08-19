@@ -15,3 +15,17 @@
 .glassmorph {
   @apply border-[1px] border-gray-300/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:bg-gray-900/60;
 }
+
+@layer utilities {
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply rounded-full bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-b from-sky-500 to-indigo-500;
+  }
+}
