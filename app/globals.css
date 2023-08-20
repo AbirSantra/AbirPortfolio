@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 .section {
-  @apply flex w-full flex-col items-center justify-center p-4 md:p-8 lg:p-16;
+  @apply flex w-full flex-col items-center justify-center px-4 py-28 sm:px-8 md:px-8 lg:px-16;
 }
 
 @layer utilities {
@@ -13,12 +13,16 @@
     @apply bg-gradient-to-r from-sky-500 to-blue-500;
   }
 
+  .gradient-bg-rev {
+    @apply bg-gradient-to-l from-sky-500 to-blue-500;
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-sky-500 to-blue-500 bg-clip-text text-transparent;
   }
 
   .glassmorph {
-    @apply border-[1px] border-gray-300/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:bg-gray-900/60;
+    @apply border-[1px] border-gray-500/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:border-gray-300/30 dark:bg-gray-900/60;
   }
   ::-webkit-scrollbar {
     @apply w-1;

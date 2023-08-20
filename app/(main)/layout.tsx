@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="relative bg-gray-50 font-Poppins text-gray-950  transition-all duration-300 ease-linear dark:bg-gray-950 dark:text-white">
+      <body className="relative scroll-smooth bg-gray-50 font-Poppins  text-gray-950 transition-all duration-300 ease-linear dark:bg-gray-950 dark:text-white">
         <header className="sticky top-0 z-50">
           <Navbar />
         </header>
