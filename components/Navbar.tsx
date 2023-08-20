@@ -97,7 +97,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-gray-50/60 p-6 transition-all duration-300 ease-linear dark:bg-gray-950/60">
+    <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-neutral-50/60 p-6 transition-all duration-300 ease-linear dark:bg-neutral-900/60">
       {/* Logo */}
       <Link href="/">
         <Logo />
@@ -122,7 +122,7 @@ const Navbar = () => {
 
       {/* Menu */}
       <div
-        className={`fixed top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-white px-4 py-6 text-xl shadow-md duration-150 dark:bg-gray-900 ${
+        className={`fixed top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-white px-4 py-6 text-xl shadow-md duration-150 dark:bg-neutral-800 ${
           isMenuOpen ? "left-6 opacity-100" : "-left-5 opacity-0"
         }`}
         onClick={toggleMenu}

@@ -22,7 +22,7 @@
   }
 
   .glassmorph {
-    @apply border-[1px] border-gray-500/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:border-gray-300/30 dark:bg-gray-900/60;
+    @apply border-[1px] border-neutral-500/30 bg-white/60 backdrop-blur-lg backdrop-saturate-[180%] dark:border-neutral-300/30 dark:bg-neutral-900/60;
   }
   ::-webkit-scrollbar {
     @apply w-1;
