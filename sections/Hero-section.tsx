@@ -1,5 +1,4 @@
 import { Socials } from "@/components/Socials";
-import { Tooltip } from "@/components/Tooltip";
 
 export const HeroSection = () => {
   return (
@@ -8,15 +7,12 @@ export const HeroSection = () => {
         <p className="text-xl sm:text-2xl">
           👋 <span className="gradient-text">Hello there! I'm</span>
         </p>
-
-        <h1 className="text-center text-6xl font-bold sm:text-6xl md:text-7xl lg:text-9xl">
+        <p className="text-center text-5xl font-bold sm:text-6xl md:text-7xl lg:text-9xl">
           Abir Santra
-        </h1>
-        <Tooltip direction="right" text="test">
-          <p className="gradient-text text-xl sm:text-2xl">
-            Web Designer and Developer
-          </p>
-        </Tooltip>
+        </p>
+        <p className="gradient-text text-xl sm:text-2xl">
+          Web Designer and Developer
+        </p>
       </div>
       <div>
         <Socials />
