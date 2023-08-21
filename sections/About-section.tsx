@@ -16,7 +16,7 @@ export const AboutSection = () => {
             className="rounded-2xl"
           />
         </div>
-        <div className="flex flex-[3] flex-col gap-8">
+        <div className="flex flex-[2] flex-col gap-8">
           <SectionHeader
             title="About Me"
             subtitle="I love building things out of code"
