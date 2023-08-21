@@ -13,6 +13,10 @@ body {
   @apply flex w-full flex-col items-center justify-center px-4 py-28 sm:px-8 md:px-8 lg:px-16;
 }
 
+.section-padding {
+  @apply px-4 py-28 sm:px-8 lg:px-16;
+}
+
 @layer utilities {
   .gradient-bg {
     @apply bg-gradient-to-r from-sky-500 to-blue-500;
