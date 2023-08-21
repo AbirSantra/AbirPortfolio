@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
 .section {
   @apply flex w-full flex-col items-center justify-center px-4 py-28 sm:px-8 md:px-8 lg:px-16;
 }
