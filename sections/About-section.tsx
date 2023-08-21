@@ -7,13 +7,13 @@ import CVDownloadIcon from "@/public/images/cv-download-icon.svg";
 export const AboutSection = () => {
   return (
     <div className="section" id="about">
-      <div className="flex w-full flex-col-reverse items-start justify-center gap-16  md:flex-row md:items-center">
+      <div className="flex w-full flex-col-reverse items-start justify-center gap-12  md:flex-row md:items-center">
         <div className="flex-1">
           <Image
             src={AbirDp}
             alt="Abir's Display Picture"
             placeholder="blur"
-            className="w-64 rounded-2xl"
+            className="rounded-2xl"
           />
         </div>
         <div className="flex flex-[3] flex-col gap-8">
