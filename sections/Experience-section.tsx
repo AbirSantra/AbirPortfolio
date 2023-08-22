@@ -10,7 +10,7 @@ export const ExperienceSection = async () => {
         title="Experience"
         subtitle="Developing, one step at a time"
       />
-      <div className="ml-4 flex flex-col gap-16 border-l-4 border-neutral-200 pl-8 dark:border-neutral-800">
+      <div className="ml-4 flex flex-col gap-16 border-l-2 border-neutral-200 pl-8 dark:border-neutral-800">
         {experienceDocs.map((experienceDoc) => (
           <ExperienceCard data={experienceDoc} key={experienceDoc._id} />
         ))}
