@@ -5,7 +5,7 @@ import { getAllExperiences } from "@/sanity/sanity-queries";
 export const ExperienceSection = async () => {
   const experienceDocs = await getAllExperiences();
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-12">
       <SectionHeader
         title="Experience"
         subtitle="Developing, one step at a time"

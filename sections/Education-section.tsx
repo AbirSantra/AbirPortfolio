@@ -5,7 +5,7 @@ import { getAllEducations } from "@/sanity/sanity-queries";
 export const EducationSection = async () => {
   const educationDocs = await getAllEducations();
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-12">
       <SectionHeader title="Education" subtitle="Gathering Knowledge" />
       <div className="ml-4 flex flex-col gap-16 border-l-2 border-neutral-200 pl-8 dark:border-neutral-800">
         {educationDocs.map((educationDoc) => (
