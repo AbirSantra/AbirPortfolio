@@ -6,7 +6,7 @@ import { Education } from '@/types/Education-type';
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
   const experienceDocs = createClient(config).fetch(
-    groq`*[_type=="experience"]{
+    groq`*[_type=="experience"] | order(startDate desc){
       _id,
       _createdAt,
       company,
