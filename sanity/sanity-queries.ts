@@ -1,6 +1,7 @@
 import {createClient,groq } from 'next-sanity'
 import { config } from './client-config'
 import { Experience } from '@/types/Experience-type';
+import { Education } from '@/types/Education-type';
 
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
@@ -21,4 +22,21 @@ export const getAllExperiences = async (): Promise<Experience[]> => {
   )
 
   return experienceDocs;
+}
+
+/* Get all Educations */
+export const getAllEducations = async (): Promise<Education[]> => {
+  const educationDocs = createClient(config).fetch(
+    groq`*[_type=="education"] | order(startDate desc) {
+      _id,
+      institution,
+      "institutionLogo": institutionLogo.asset->url,
+      field,
+      location,
+      startDate,
+      endDate,
+      score
+    }`
+  )
+  return educationDocs;
 }
