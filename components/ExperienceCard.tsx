@@ -1,14 +1,49 @@
+"use client";
+
+import React from "react";
 import { Experience } from "@/types/Experience-type";
 import moment from "moment";
 import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
+import { PortableText } from "@portabletext/react";
+import { BsArrowRightShort, BsCaretRightFill } from "react-icons/bs";
 
 export const ExperienceCard = ({ data }: { data: Experience }) => {
+  const [readMore, setReadMore] = React.useState<boolean>(false);
+  const readMoreRef = React.useRef<HTMLDivElement>(null);
+
+  /* Handle ReadMore */
+  const handleReadMore = () => {
+    setReadMore((prevState) => !prevState);
+  };
+
+  /* ReadMore Closer */
+  React.useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        readMoreRef.current &&
+        !readMoreRef.current.contains(event.target as Node)
+      ) {
+        console.log("Click outside!");
+        setReadMore(false);
+      }
+    };
+    if (readMore) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [readMore]);
+
+  /* Format date from sanity */
   const startDate = moment(data.startDate).format("MMM YY");
   const endDate = moment(data.endDate).format("MMM YY");
   return (
     <div className="group relative">
-      <div className="flex flex-col gap-1 duration-150 ease-in-out group-hover:translate-x-4">
+      <div className="flex flex-col gap-1 transition-transform duration-200 group-hover:translate-x-4">
         <div className="flex items-center gap-4">
           <p className="text-xl font-semibold">{data.company}</p>
           <p className="text-xs font-medium tracking-tight text-neutral-400">
@@ -22,6 +57,21 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
         <p className="mt-2 text-xs">
           <span className="font-semibold">Focus: </span> {data.focus}
         </p>
+        <div ref={readMoreRef}>
+          <span
+            className="flex cursor-pointer items-center gap-1 text-xs font-medium text-sky-500"
+            onClick={handleReadMore}
+          >
+            Learn more <BsCaretRightFill />
+          </span>
+          <span
+            className={`prose dark:prose-invert text-xs duration-200 ${
+              !readMore && "hidden"
+            }`}
+          >
+            <PortableText value={data.description} />
+          </span>
+        </div>
       </div>
       <div className="absolute -left-12 top-0 bg-neutral-900">
         <Image
