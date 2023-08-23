@@ -6,7 +6,7 @@ import moment from "moment";
 import Image from "next/image";
 import { FaLocationDot } from "react-icons/fa6";
 import { PortableText } from "@portabletext/react";
-import { BsArrowRightShort, BsCaretRightFill } from "react-icons/bs";
+import { BsCaretDownFill, BsCaretRightFill } from "react-icons/bs";
 
 export const ExperienceCard = ({ data }: { data: Experience }) => {
   const [readMore, setReadMore] = React.useState<boolean>(false);
@@ -62,10 +62,10 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
             className="flex cursor-pointer items-center gap-1 text-xs font-medium text-sky-500"
             onClick={handleReadMore}
           >
-            Learn more <BsCaretRightFill />
+            Learn more {readMore ? <BsCaretDownFill /> : <BsCaretRightFill />}
           </span>
           <span
-            className={`prose dark:prose-invert text-xs duration-200 ${
+            className={`prose text-xs duration-200 dark:prose-invert ${
               !readMore && "hidden"
             }`}
           >
