@@ -2,7 +2,7 @@ import { Socials } from "@/components/Socials";
 
 export const HeroSection = () => {
   return (
-    <div className="section min-h-[calc(100vh-8rem)] gap-12">
+    <div className="section min-h-[calc(100vh-8rem)] gap-12 md:min-h-[calc(100vh-4rem)]">
       <div className="flex flex-col items-center justify-center gap-4 text-center font-medium">
         <p className="text-xl sm:text-2xl">
           👋 <span className="gradient-text">Hello there! I'm</span>
