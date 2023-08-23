@@ -43,7 +43,7 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
   const endDate = moment(data.endDate).format("MMM YY");
   return (
     <div className="group relative">
-      <div className="flex flex-col gap-1 transition-transform duration-200 group-hover:translate-x-4">
+      <div className="flex flex-col gap-1">
         <div className="flex items-center gap-4">
           <p className="text-xl font-semibold">{data.company}</p>
           <p className="text-xs font-medium tracking-tight text-neutral-400">
