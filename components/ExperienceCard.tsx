@@ -45,12 +45,12 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
     <div className="group relative">
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-4">
-          <p className="text-xl font-semibold">{data.company}</p>
+          <p className="font-semibold md:text-xl">{data.company}</p>
           <p className="text-xs font-medium tracking-tight text-neutral-400">
             {startDate} - {data.currentlyWorking ? "Present" : endDate}
           </p>
         </div>
-        <p className="gradient-text text-base font-medium">{data.position}</p>
+        <p className="gradient-text text-sm font-medium">{data.position}</p>
         <p className="flex items-center gap-1 text-xs text-neutral-400">
           <FaLocationDot /> {data.location}
         </p>
