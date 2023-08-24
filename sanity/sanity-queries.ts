@@ -2,6 +2,7 @@ import {createClient,groq } from 'next-sanity'
 import { config } from './client-config'
 import { Experience } from '@/types/Experience-type';
 import { Education } from '@/types/Education-type';
+import { Tool } from '@/types/Tool-type';
 
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
@@ -39,4 +40,17 @@ export const getAllEducations = async (): Promise<Education[]> => {
     }`
   )
   return educationDocs;
+}
+
+/* Get all tools */
+export const getAllTools = async (): Promise<Tool[]> => {
+  const toolDocs = createClient(config).fetch(
+    groq`*[_type=="tool"] | order(_createdAt asc){
+      _id,
+      name,
+      "icon": icon.asset->url,
+    }`
+  )
+
+  return toolDocs;
 }
