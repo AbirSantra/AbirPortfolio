@@ -3,6 +3,7 @@ import { config } from './client-config'
 import { Experience } from '@/types/Experience-type';
 import { Education } from '@/types/Education-type';
 import { Tool } from '@/types/Tool-type';
+import { Project } from '@/types/Project-type';
 
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
@@ -53,4 +54,20 @@ export const getAllTools = async (): Promise<Tool[]> => {
   )
 
   return toolDocs;
+}
+
+/* Get Featured Projects */
+export const getFeaturedProjects = async (): Promise<Project[]> => {
+  const projectDocs = createClient(config).fetch(
+    groq`*[_type=="project" && isFeatured == true] | order(_createdAt desc){
+      _id,
+      title,
+      tagline,
+      "slug": slug.current,
+      "mainImage": mainImage.asset->url,
+      isFeatured
+    }`
+  )
+
+  return projectDocs;
 }
