@@ -35,17 +35,10 @@ const Navbar = () => {
         document.documentElement.classList.add("dark");
         setTheme("dark");
       }
-    } else if (
-      !localTheme &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-    ) {
+    } else {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
       setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setTheme("light");
     }
   }, []);
 
@@ -97,7 +90,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-neutral-50/60 p-6 transition-all duration-300 ease-linear dark:bg-neutral-900/60">
+    <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-neutral-50/60 p-6 transition-all duration-200 ease-linear dark:bg-neutral-900/60">
       {/* Logo */}
       <Link href="/">
         <Logo />
