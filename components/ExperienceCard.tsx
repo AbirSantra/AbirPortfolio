@@ -44,7 +44,7 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
   return (
     <div className="group relative">
       <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-4">
           <p className="font-semibold md:text-xl">{data.company}</p>
           <p className="text-xs font-medium tracking-tight text-neutral-400">
             {startDate} - {data.currentlyWorking ? "Present" : endDate}
