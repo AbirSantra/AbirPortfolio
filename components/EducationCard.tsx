@@ -7,12 +7,12 @@ import { FaLocationDot } from "react-icons/fa6";
 const EducationCard = ({ data }: { data: Education }) => {
   /* Format date from sanity */
   const startDate = moment(data.startDate).format("YYYY");
-  const endDate = moment(data.endDate).format("YYYY");
+  const endDate = moment(data.endDate).format("YY");
 
   return (
     <div className="group relative">
       <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-4 ">
+        <div className="flex items-center justify-between gap-4 ">
           <p className="font-semibold md:text-xl">{data.institution}</p>
           <p className="whitespace-nowrap text-xs font-medium tracking-tight text-neutral-400">
             {startDate} - {endDate}
