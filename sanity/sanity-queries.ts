@@ -106,7 +106,7 @@ export const getFeaturedBlogs = async (): Promise<Blog[]> => {
 
   const result = await data.json();
 
-  const blogDocs = result.data.user.publication.posts.slice(0,3);
+  const blogDocs = result.data.user.publication.posts.slice(0,4);
 
   return blogDocs;
 }
