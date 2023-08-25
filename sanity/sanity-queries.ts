@@ -4,6 +4,7 @@ import { Experience } from '@/types/Experience-type';
 import { Education } from '@/types/Education-type';
 import { Tool } from '@/types/Tool-type';
 import { Project } from '@/types/Project-type';
+import { Blog } from '@/types/Blog-type';
 
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
@@ -70,4 +71,42 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
   )
 
   return projectDocs;
+}
+
+/* Get Hashnode Blogs */
+export const getFeaturedBlogs = async (): Promise<Blog[]> => {
+  const query = `
+    query GetFeaturedBlogs($page: Int!){
+      user(username: "AbirSantra"){
+        publication{
+          posts(page: $page){
+            title,
+            brief,
+            slug,
+            coverImage,
+            dateAdded,
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = { page: 0 };
+
+  const data = await fetch('https://api.hashnode.com/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables
+    })
+  })
+
+  const result = await data.json();
+
+  const blogDocs = result.data.user.publication.posts.slice(0,3);
+
+  return blogDocs;
 }
