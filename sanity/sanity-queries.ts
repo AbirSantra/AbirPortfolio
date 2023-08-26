@@ -137,12 +137,8 @@ export const getFeaturedBlogs = async (): Promise<Blog[]> => {
 
 /* Get all blogs */
 export const getAllBlogs = async (): Promise<Blog[]> => {
-  let fetchedAll = false;
-  let page = 0;
-  let blogDocs: Blog[] = [];
-
   const query = `
-    query GetAllBlogs($page: Int!){
+    query GetFeaturedBlogs($page: Int!){
       user(username: "AbirSantra"){
         publication{
           posts(page: $page){
@@ -157,29 +153,22 @@ export const getAllBlogs = async (): Promise<Blog[]> => {
     }
   `;
 
-  const variables = { page };
+  const variables = { page: 0 };
 
-  while (!fetchedAll) {
-    const data = await fetch('https://api.hashnode.com/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query,
-        variables
-      })
+  const data = await fetch('https://api.hashnode.com/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query,
+      variables
     })
+  })
 
-    const result = await data.json();
+  const result = await data.json();
 
-    if (result.data.user.publication.posts.length === 0) {
-      fetchedAll = true;
-    } else {
-      blogDocs.push(...result.data.user.publication.posts);
-      page++;
-    }
-  }
+  const blogDocs = result.data.user.publication.posts;
 
   return blogDocs;
 }
