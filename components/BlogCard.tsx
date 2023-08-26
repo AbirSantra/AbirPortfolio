@@ -9,7 +9,7 @@ import { BsCaretRightFill } from "react-icons/bs";
 export const BlogCard = ({ data }: { data: Blog }) => {
   const date = moment(data.dateAdded).fromNow();
   return (
-    <div className="w-full overflow-hidden rounded-lg border-[1px] border-transparent shadow-sm duration-200 hover:border-sky-500">
+    <div className="w-full overflow-hidden rounded-lg border-[1px] border-transparent shadow-md duration-200 hover:border-sky-500">
       <Link href={`https://abirsantra.hashnode.dev/${data.slug}`}>
         <Image
           src={data.coverImage}
