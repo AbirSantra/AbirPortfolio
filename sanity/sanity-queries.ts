@@ -76,13 +76,13 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
 /* Get All Projects */
 export const getAllProjects = async (): Promise<Project[]> => {
   const projectDocs = createClient(config).fetch(
-    groq`*[_type=="project] | order(_createdAt desc){
+    groq`*[_type=="project"] | order(_createdAt desc){
       _id,
       title,
       tagline,
       "slug": slug.current,
       "mainImage": mainImage.asset->url,
-      isFeatured
+      isFeatured,
       description,
       githubLink,
       projectLink,
