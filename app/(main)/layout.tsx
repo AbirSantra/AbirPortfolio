@@ -12,7 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className="relative scroll-smooth bg-neutral-50 font-Poppins  text-neutral-950 antialiased transition-all duration-200 ease-linear dark:bg-neutral-900 dark:text-white">
         <header className="sticky top-0 z-50">
           <Navbar />
