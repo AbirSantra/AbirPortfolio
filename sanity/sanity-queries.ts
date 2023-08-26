@@ -134,3 +134,52 @@ export const getFeaturedBlogs = async (): Promise<Blog[]> => {
 
   return blogDocs;
 }
+
+/* Get all blogs */
+export const getAllBlogs = async (): Promise<Blog[]> => {
+  let fetchedAll = false;
+  let page = 0;
+  let blogDocs: Blog[] = [];
+
+  const query = `
+    query GetAllBlogs($page: Int!){
+      user(username: "AbirSantra"){
+        publication{
+          posts(page: $page){
+            title,
+            brief,
+            slug,
+            coverImage,
+            dateAdded,
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = { page };
+
+  while (!fetchedAll) {
+    const data = await fetch('https://api.hashnode.com/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        query,
+        variables
+      })
+    })
+
+    const result = await data.json();
+
+    if (result.data.user.publication.posts.length === 0) {
+      fetchedAll = true;
+    } else {
+      blogDocs.push(...result.data.user.publication.posts);
+      page++;
+    }
+  }
+
+  return blogDocs;
+}
