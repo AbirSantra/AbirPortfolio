@@ -16,7 +16,7 @@ export const ProjectSection = async () => {
         />
         <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
           {projectDocs.map((project) => (
-            <ProjectCard data={project} key={project._id} />
+            <ProjectCard data={project} key={project._id} featured />
           ))}
         </div>
         <div className="ml-auto">
