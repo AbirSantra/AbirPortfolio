@@ -1,5 +1,6 @@
 import { Project } from "@/types/Project-type";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const ProjectCard = ({
@@ -10,7 +11,8 @@ export const ProjectCard = ({
   featured?: boolean;
 }) => {
   return (
-    <div
+    <Link
+      href={`/projects/${data.slug}`}
       className={`group relative flex overflow-hidden rounded-lg  ${
         featured && "md:first:col-span-2 md:first:row-span-2"
       }`}
@@ -34,6 +36,6 @@ export const ProjectCard = ({
           {data.tagline}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
