@@ -73,6 +73,30 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
   return projectDocs;
 }
 
+/* Get All Projects */
+export const getAllProjects = async (): Promise<Project[]> => {
+  const projectDocs = createClient(config).fetch(
+    groq`*[_type=="project] | order(_createdAt desc){
+      _id,
+      title,
+      tagline,
+      "slug": slug.current,
+      "mainImage": mainImage.asset->url,
+      isFeatured
+      description,
+      githubLink,
+      projectLink,
+      tools[]->{
+        _id,
+        name,
+        "icon": icon.asset->url,
+      }
+    }`
+  )
+
+  return projectDocs;
+}
+
 /* Get Hashnode Blogs */
 export const getFeaturedBlogs = async (): Promise<Blog[]> => {
   const query = `
