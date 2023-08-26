@@ -35,7 +35,7 @@ export const AboutSection = () => {
               holds, and I can't wait to see where my coding journey takes me!
             </p>
           </div>
-          <LinkButton href="/abirsantra-cv.pdf" variant="large">
+          <LinkButton href="/abirsantra-cv.pdf" variant="large" hover>
             <p>Download CV</p>
             <Image src={CVDownloadIcon} alt="Download CV" />
           </LinkButton>
