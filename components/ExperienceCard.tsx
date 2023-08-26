@@ -73,7 +73,7 @@ export const ExperienceCard = ({ data }: { data: Experience }) => {
           </span>
         </div>
       </div>
-      <div className="absolute -left-12 top-0 bg-neutral-900">
+      <div className="absolute -left-12 top-0 overflow-hidden rounded-full bg-neutral-900">
         <Image
           src={data.companyLogo}
           height={32}

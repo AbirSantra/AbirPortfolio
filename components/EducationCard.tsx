@@ -26,7 +26,7 @@ const EducationCard = ({ data }: { data: Education }) => {
           <span className="font-semibold">Score: </span> {data.score}
         </p>
       </div>
-      <div className="absolute -left-12 top-0 bg-neutral-900">
+      <div className="absolute -left-12 top-0 overflow-hidden rounded-full bg-neutral-900">
         <Image
           src={data.institutionLogo}
           height={32}
