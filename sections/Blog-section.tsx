@@ -1,7 +1,9 @@
 import { BlogCard } from "@/components/BlogCard";
+import { LinkButton } from "@/components/LinkButton";
 import { SectionHeader } from "@/components/SectionHeader";
 import { getFeaturedBlogs } from "@/sanity/sanity-queries";
 import React from "react";
+import { BsArrowRightShort } from "react-icons/bs";
 
 export const BlogSection = async () => {
   const blogDocs = await getFeaturedBlogs();
@@ -16,6 +18,12 @@ export const BlogSection = async () => {
           {blogDocs.map((blog) => (
             <BlogCard data={blog} key={blog._id} />
           ))}
+        </div>
+        <div className="ml-auto">
+          <LinkButton href="/blogs" variant="large" hover>
+            <p>All Blogs</p>
+            <BsArrowRightShort size={24} />
+          </LinkButton>
         </div>
       </div>
     </div>
