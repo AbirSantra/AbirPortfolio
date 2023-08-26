@@ -8,7 +8,7 @@ import { Blog } from '@/types/Blog-type';
 
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
-  const experienceDocs = createClient(config).fetch(
+  const experienceDocs = await createClient(config).fetch(
     groq`*[_type=="experience"] | order(startDate desc){
       _id,
       _createdAt,
@@ -29,7 +29,7 @@ export const getAllExperiences = async (): Promise<Experience[]> => {
 
 /* Get all Educations */
 export const getAllEducations = async (): Promise<Education[]> => {
-  const educationDocs = createClient(config).fetch(
+  const educationDocs = await createClient(config).fetch(
     groq`*[_type=="education"] | order(startDate desc) {
       _id,
       institution,
@@ -46,7 +46,7 @@ export const getAllEducations = async (): Promise<Education[]> => {
 
 /* Get all tools */
 export const getAllTools = async (): Promise<Tool[]> => {
-  const toolDocs = createClient(config).fetch(
+  const toolDocs = await createClient(config).fetch(
     groq`*[_type=="tool"] | order(_createdAt asc){
       _id,
       name,
@@ -59,7 +59,7 @@ export const getAllTools = async (): Promise<Tool[]> => {
 
 /* Get Featured Projects */
 export const getFeaturedProjects = async (): Promise<Project[]> => {
-  const projectDocs = createClient(config).fetch(
+  const projectDocs = await createClient(config).fetch(
     groq`*[_type=="project" && isFeatured == true] | order(_createdAt desc){
       _id,
       title,
@@ -73,10 +73,10 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
   return projectDocs;
 }
 
-/* Get All Projects */
-export const getAllProjects = async (): Promise<Project[]> => {
-  const projectDocs = createClient(config).fetch(
-    groq`*[_type=="project"] | order(_createdAt desc){
+/* Get Project */
+export const getProject = async (slug: string): Promise<Project> => {
+  const projectDoc = await createClient(config).fetch(
+    groq`*[_type=="project" && slug.current == $slug][0]{
       _id,
       title,
       tagline,
@@ -91,6 +91,21 @@ export const getAllProjects = async (): Promise<Project[]> => {
         name,
         "icon": icon.asset->url,
       }
+    }`,{slug: slug}
+  )
+  return projectDoc;
+}
+
+/* Get All Projects */
+export const getAllProjects = async (): Promise<Project[]> => {
+  const projectDocs = await createClient(config).fetch(
+    groq`*[_type=="project"] | order(_createdAt desc){
+      _id,
+      title,
+      tagline,
+      "slug": slug.current,
+      "mainImage": mainImage.asset->url,
+      isFeatured,
     }`
   )
 
