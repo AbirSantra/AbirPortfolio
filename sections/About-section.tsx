@@ -1,7 +1,7 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import AbirDp from "@/public/images/abir-dp.png";
-import { ButtonLink } from "@/components/ButtonLink";
+import { LinkButton } from "@/components/LinkButton";
 import CVDownloadIcon from "@/public/images/cv-download-icon.svg";
 
 export const AboutSection = () => {
@@ -35,10 +35,10 @@ export const AboutSection = () => {
               holds, and I can't wait to see where my coding journey takes me!
             </p>
           </div>
-          <ButtonLink href="/abirsantra-cv.pdf">
+          <LinkButton href="/abirsantra-cv.pdf" variant="large">
             <p>Download CV</p>
             <Image src={CVDownloadIcon} alt="Download CV" />
-          </ButtonLink>
+          </LinkButton>
         </div>
       </div>
     </div>
