@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import "../globals.css";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Abir Santra",
@@ -18,6 +19,9 @@ export default function RootLayout({
           <Navbar />
         </header>
         <main className="mx-auto w-full max-w-[1140px]">{children}</main>
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
