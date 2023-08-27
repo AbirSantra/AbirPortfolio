@@ -79,12 +79,12 @@ const Navbar = () => {
 
   /* Menu List */
   const menuList = [
-    { name: "About", icon: <FaUser />, link: "#about" },
-    { name: "Experience", icon: <FaBriefcase />, link: "#experience" },
-    { name: "Tech Stack", icon: <FaTools />, link: "#techstack" },
-    { name: "Projects", icon: <HiRocketLaunch />, link: "#projects" },
-    { name: "Blogs", icon: <FaPen />, link: "#blogs" },
-    { name: "Contact", icon: <FaPhoneAlt />, link: "#contact" },
+    { name: "About", icon: <FaUser />, link: "/#about" },
+    { name: "Experience", icon: <FaBriefcase />, link: "/#experience" },
+    { name: "Tech Stack", icon: <FaTools />, link: "/#techstack" },
+    { name: "Projects", icon: <HiRocketLaunch />, link: "/#projects" },
+    { name: "Blogs", icon: <FaPen />, link: "/#blogs" },
+    { name: "Contact", icon: <FaPhoneAlt />, link: "/#contact" },
   ];
 
   return (
