@@ -5,7 +5,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-white shadow-xl duration-200 dark:bg-neutral-950">
+    <div
+      className="bg-white shadow-xl duration-200 dark:bg-neutral-950"
+      id="contact"
+    >
       <div className="mx-auto flex w-full max-w-[1140px] flex-col-reverse justify-between gap-16 px-4 py-16 sm:px-8 md:flex-row lg:px-16">
         <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
           <Logo variant="large" />

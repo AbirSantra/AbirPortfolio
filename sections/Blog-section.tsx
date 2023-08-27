@@ -8,7 +8,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 export const BlogSection = async () => {
   const blogDocs = await getFeaturedBlogs();
   return (
-    <div className="section">
+    <div className="section" id="blogs">
       <div className="flex w-full flex-col gap-8">
         <SectionHeader
           title="Blogs"

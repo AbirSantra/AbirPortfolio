@@ -8,7 +8,7 @@ import React from "react";
 export const ProjectSection = async () => {
   const projectDocs = await getFeaturedProjects();
   return (
-    <div className="section" id="project">
+    <div className="section" id="projects">
       <div className="flex w-full flex-col gap-8">
         <SectionHeader
           title="Featured Projects"
