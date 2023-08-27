@@ -93,7 +93,7 @@ const Navbar = () => {
     <nav className="glassmorph relative flex h-16 w-full items-center justify-between border-none bg-neutral-50/60 p-6 transition-all duration-200 ease-linear dark:bg-neutral-900/60">
       {/* Logo */}
       <Link href="/">
-        <Logo />
+        <Logo variant="small" />
       </Link>
       {/* Buttons */}
       <div className="flex items-center justify-center gap-8 text-xl">

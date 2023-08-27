@@ -1,6 +1,10 @@
-const Logo = () => {
+const Logo = ({ variant }: { variant: "small" | "large" }) => {
   return (
-    <div className="flex text-xl font-medium -tracking-wider">
+    <div
+      className={`flex font-medium -tracking-wider ${
+        variant === "small" ? "text-xl" : "text-4xl"
+      }`}
+    >
       <p>abir</p>
       <p className="gradient-text">._</p>
     </div>
