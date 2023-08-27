@@ -15,7 +15,7 @@ const Footer = () => {
           <Socials />
         </div>
         <div className="flex flex-col items-center justify-center gap-2  md:items-end md:justify-start">
-          <p className="text-3xl font-bold">Let's work together!</p>
+          <p className="text-3xl font-bold">Lets work together!</p>
           <p className="text-neutral-500">
             Have a project for me? Hit me up at
           </p>
