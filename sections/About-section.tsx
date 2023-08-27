@@ -21,7 +21,7 @@ export const AboutSection = () => {
             title="About Me"
             subtitle="I love building things out of code"
           />
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 text-sm sm:text-base">
             <p>
               Hi there! I’m Abir, a web designer and developer who has been
               tinkering with code since high school, and it has been my passion
