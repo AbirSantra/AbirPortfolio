@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import ToolCard from "@/components/ToolCard";
 import { getProject } from "@/sanity/sanity-queries";
 import { PortableText } from "@portabletext/react";
+import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { BsArrowRightShort } from "react-icons/bs";
@@ -10,6 +11,18 @@ import { BsArrowRightShort } from "react-icons/bs";
 type Props = {
   params: { project: string };
 };
+
+export async function generateMetadata(
+  { params }: Props,
+  parent?: ResolvingMetadata,
+): Promise<Metadata> {
+  const slug = params.project;
+  const projectDoc = await getProject(slug);
+  return {
+    title: `${projectDoc.title}`,
+    description: `${projectDoc.tagline}`,
+  };
+}
 
 const Project = async ({ params }: Props) => {
   const slug = params.project;

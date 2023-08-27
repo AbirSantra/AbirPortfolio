@@ -3,8 +3,9 @@ import "../globals.css";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Abir Santra",
-  description: "Web Designer and Developer",
+  title: "Abir Santra | Web Designer and Developer",
+  description:
+    "Abir Santra is a passionate Web Designer and Developer from India specializing in the MERN stack.",
 };
 
 export default function RootLayout({

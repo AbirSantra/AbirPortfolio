@@ -3,6 +3,11 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { getAllBlogs } from "@/sanity/sanity-queries";
 import React from "react";
 
+export const metadata = {
+  title: "Abir Santra | Blogs",
+  description: "My recent blogs. I like to write about the things I learn.",
+};
+
 const Blogs = async () => {
   const blogDocs = await getAllBlogs();
   return (
