@@ -12,9 +12,6 @@ const Footer = () => {
       <div className="mx-auto flex w-full max-w-[1140px] flex-col-reverse justify-between gap-16 px-4 py-16 sm:px-8 md:flex-row lg:px-16">
         <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
           <Logo variant="large" />
-          <p className="gradient-text mb-4 text-sm font-medium tracking-tighter">
-            Portfolio Website
-          </p>
           <Socials />
         </div>
         <div className="flex flex-col items-center justify-center gap-2  md:items-end md:justify-start">
