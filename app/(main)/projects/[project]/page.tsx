@@ -12,10 +12,7 @@ type Props = {
   params: { project: string };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent?: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.project;
   const projectDoc = await getProject(slug);
   return {
