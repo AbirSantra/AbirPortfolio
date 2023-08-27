@@ -28,7 +28,7 @@ export const BlogCard = ({ data }: { data: Blog }) => {
           href={`https://abirsantra.hashnode.dev/${data.slug}`}
           variant="small"
         >
-          <p>Read more</p>
+          <p>Read Blog</p>
           <BsArrowRightShort size={16} />
         </LinkButton>
       </div>
