@@ -46,7 +46,6 @@ const Navbar = () => {
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        console.log("Click outside!");
         setIsMenuOpen(false);
       }
     };
