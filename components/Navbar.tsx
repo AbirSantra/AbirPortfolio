@@ -95,14 +95,14 @@ const Navbar = () => {
       </Link>
       {/* Buttons */}
       <div className="flex items-center justify-center gap-8 text-xl">
-        <button onClick={toggleTheme}>
+        <button onClick={toggleTheme} aria-label="Theme Switcher">
           {theme === "dark" ? (
             <BsFillSunFill className="animate-spin-once" />
           ) : (
             <BsFillMoonStarsFill className="animate-spin-once" />
           )}
         </button>
-        <button onClick={toggleMenu}>
+        <button onClick={toggleMenu} aria-label="Toggle Menubar">
           {isMenuOpen ? (
             <BsGrid className="animate-spin-once" />
           ) : (
@@ -124,6 +124,7 @@ const Navbar = () => {
             href={item.link}
             key={index}
             className="duration-300 ease-in-out hover:text-sky-500"
+            aria-label={item.name}
           >
             <Tooltip text={item.name} direction="right">
               {item.icon}
