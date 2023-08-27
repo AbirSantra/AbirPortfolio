@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-white shadow-xl dark:bg-neutral-950 ">
+    <div className="bg-white shadow-xl duration-200 dark:bg-neutral-950">
       <div className="mx-auto flex w-full max-w-[1140px] flex-col-reverse justify-between gap-16 px-4 py-16 sm:px-8 md:flex-row lg:px-16">
         <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
           <Logo variant="large" />
@@ -27,8 +27,8 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="border-t-[2px] border-neutral-100 dark:border-neutral-800"></div>
-      <div className="mx-auto flex w-full max-w-[1140px] items-center justify-center px-4 py-4 text-center text-sm text-neutral-500 sm:px-8 lg:px-16">
+      <div className="border-t-[1px] border-neutral-200 dark:border-neutral-700"></div>
+      <div className="mx-auto flex w-full max-w-[1140px] items-center justify-center px-4 py-4 text-center text-xs text-neutral-500 sm:px-8 md:text-sm lg:px-16">
         Handcrafted by Abir Santra © {new Date().getFullYear()} using NextJS,
         TailwindCSS & Sanity CMS
       </div>
