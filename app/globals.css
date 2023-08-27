@@ -10,11 +10,11 @@ body {
 }
 
 .section {
-  @apply flex w-full flex-col items-center justify-center px-4 py-28 sm:px-8 md:px-8 lg:px-16;
+  @apply flex w-full flex-col items-center justify-center px-4 py-28 sm:px-8 md:px-8 md:py-48 lg:px-16;
 }
 
 .section-padding {
-  @apply px-4 py-28 sm:px-8 lg:px-16;
+  @apply px-4 py-28 sm:px-8 md:py-48 lg:px-16;
 }
 
 @layer utilities {
