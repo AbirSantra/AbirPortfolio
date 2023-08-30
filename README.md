@@ -1,34 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## ![Site Logo](public/images/abir_logo.png)
 
-## Getting Started
+### Abir Santra | Portfolio Website using Sanity and HashnodeAPI
 
-First, run the development server:
+A clean, simple, elegant and responsive portfolio website for developers. [Click to Preview](https://www.abirsantra.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This is a dynamic portfolio which is powered by Sanity CMS. All data related to Experience, Education, Projects are fetched from the Sanity CDN. All blogs are fetched from Hashnode API.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
+* Navbar with Logo(Editable), Theme Switcher, and Menu Toggle
+* Hero Section with Name, Tagline, Social Links
+* About Section with Image, Description and CV download button
+* Experience Section with Company Logo, Name, Job Role, Location, Duration, Focus, and drop-down Description
+* Education Section with Institute Logo, Name, Degree, Location, Duration, and Score
+* Tech Stack with proficient skills and technologies.
+* Projects section with 3 featured projects
+* Blogs section with 4 latest blogs.
+* All Projects page with all the projects
+* Individual Project pages with Title, Tagline, Showcase Image, Description, Demo link, Github link, and Tools used.
+* Recent Blogs page with all the recent blogs.
+* Footer with Logo, Social links, and link to Email.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Experience, Education and Project data can be created, updated, or deleted using the admin page without having to change any code.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 🌟 If you want to use this as a template for your own portfolio site, follow the steps below:
 
-## Learn More
+#### Sanity Setup
 
-To learn more about Next.js, take a look at the following resources:
+1. Go to [Sanity](https://www.sanity.io/) and create an account using the free plan.
+2. Create a dataset on Sanity
+3. Go to the `API` settings on the Sanity Dashboard and under `CORS origins` add the url of your localhost such as `https://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Repo Setup
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Fork this repo
+2. Clone it to your local machine
+3. Run `npm install` to install all the necessary packages
+4. Open the file `sanity.config.ts` in the route folder
+   1. Change `name` and `title` to your dataset name
+   2. Change the `projectId` to your projectId
+5. Run `npm run dev` to start the application
+6. Open `http://localhost:3000` to see the application running
+7. Navigate to `http://localhost:3000/admin` to open the Sanity Studio and login to your account
+8. Add your Experience, Education, and Projects
+9. Change all the static data in the code like Name, Images, Logo, CV, etc
 
-## Deploy on Vercel
+Remember to add your deployed origin to the Sanity.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### If you liked this repo, give it a start ⭐
