@@ -17,7 +17,10 @@ const config = defineConfig({
       structure: (S, context) => {
         return S.list()
           .title("Content")
-          .items([orderableDocumentListDeskItem({ type: "tool", S, context })]);
+          .items([
+            orderableDocumentListDeskItem({ type: "tool", S, context }),
+            orderableDocumentListDeskItem({ type: "project", S, context }),
+          ]);
       },
     }),
   ],
