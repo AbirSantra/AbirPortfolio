@@ -60,7 +60,7 @@ export const getAllTools = async (): Promise<Tool[]> => {
 /* Get Featured Projects */
 export const getFeaturedProjects = async (): Promise<Project[]> => {
   const projectDocs = await createClient(config).fetch(
-    groq`*[_type=="project" && isFeatured == true] | order(_createdAt desc){
+    groq`*[_type=="project"] | order(orderRank){
       _id,
       title,
       tagline,
@@ -70,7 +70,7 @@ export const getFeaturedProjects = async (): Promise<Project[]> => {
     }`,
   );
 
-  return projectDocs;
+  return projectDocs.slice(0, 3);
 };
 
 /* Get Project */
