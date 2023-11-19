@@ -9,7 +9,7 @@ import { Blog } from "@/types/Blog-type";
 /* Get all experiences */
 export const getAllExperiences = async (): Promise<Experience[]> => {
   const experienceDocs = await createClient(config).fetch(
-    groq`*[_type=="experience"] | order(startDate desc){
+    groq`*[_type=="experience"] | order(orderRank){
       _id,
       _createdAt,
       company,
