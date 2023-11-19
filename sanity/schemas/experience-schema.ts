@@ -1,64 +1,71 @@
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
+
 const experience = {
-  name: 'experience',
-  title: 'Experiences',
-  type: 'document',
+  name: "experience",
+  title: "Experiences",
+  type: "document",
+  orderings: [orderRankOrdering],
   fields: [
     {
-      name: 'company',
-      title: 'Company',
-      type: 'string'
+      name: "company",
+      title: "Company",
+      type: "string",
     },
+    orderRankField({ type: "experience" }),
     {
-      name: 'companyLogo',
-      title: 'Company Logo',
-      type: 'image',
+      name: "companyLogo",
+      title: "Company Logo",
+      type: "image",
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
-      name: 'position',
+      name: "position",
       title: "Position",
-      type: 'string'
+      type: "string",
     },
     {
-      name: 'location',
-      title: 'Location',
-      type: 'string'
+      name: "location",
+      title: "Location",
+      type: "string",
     },
     {
-      name: 'startDate',
-      title: 'Start Date',
-      type: 'date',
+      name: "startDate",
+      title: "Start Date",
+      type: "date",
       options: {
-        dateFormat: 'MMM-YYYY'
-      }
+        dateFormat: "MMM-YYYY",
+      },
     },
     {
-      name: 'endDate',
-      title: 'End Date',
-      type: 'date',
+      name: "endDate",
+      title: "End Date",
+      type: "date",
       options: {
-        dateFormat: 'MMM-YYYY'
-      }
+        dateFormat: "MMM-YYYY",
+      },
     },
     {
-      name: 'currentlyWorking',
+      name: "currentlyWorking",
       title: "Currently Working?",
-      type: 'boolean'
+      type: "boolean",
     },
     {
       name: "focus",
       title: "Focus",
-      type: 'string'
+      type: "string",
     },
     {
-      name: 'description',
-      title: 'Description',
-      type: 'array',
-      of: [{type: 'block'}]
-    }
-  ]
-}
+      name: "description",
+      title: "Description",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+  ],
+};
 
-export default experience
+export default experience;
