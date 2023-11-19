@@ -100,7 +100,7 @@ export const getProject = async (slug: string): Promise<Project> => {
 /* Get All Projects */
 export const getAllProjects = async (): Promise<Project[]> => {
   const projectDocs = await createClient(config).fetch(
-    groq`*[_type=="project"] | order(_createdAt desc){
+    groq`*[_type=="project"] | order(orderRank){
       _id,
       title,
       tagline,
