@@ -20,6 +20,7 @@ const config = defineConfig({
           .items([
             orderableDocumentListDeskItem({ type: "tool", S, context }),
             orderableDocumentListDeskItem({ type: "project", S, context }),
+            orderableDocumentListDeskItem({ type: "experience", S, context }),
           ]);
       },
     }),
