@@ -1,20 +1,28 @@
 import { defineConfig } from "sanity";
-import {deskTool} from 'sanity/desk'
+import { deskTool } from "sanity/desk";
 import schemas from "./sanity/schemas";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 const config = defineConfig({
-  name: 'AbirPortfolio',
-  title: 'AbirPortfolio',
+  name: "AbirPortfolio",
+  title: "AbirPortfolio",
 
-  projectId: 'm1lgynxf',
-  dataset: 'production',
-  apiVersion: '2023-08-15',
-  basePath: '/admin',
+  projectId: "m1lgynxf",
+  dataset: "production",
+  apiVersion: "2023-08-15",
+  basePath: "/admin",
 
-  plugins: [deskTool()],
+  plugins: [
+    deskTool({
+      structure: (S, context) => {
+        return S.list()
+          .title("Content")
+          .items([orderableDocumentListDeskItem({ type: "tool", S, context })]);
+      },
+    }),
+  ],
 
-  schema: {types: schemas}
-
-})
+  schema: { types: schemas },
+});
 
 export default config;
