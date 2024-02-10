@@ -41,9 +41,9 @@ const Project = async ({ params }: Props) => {
         <div className="flex w-full flex-col-reverse gap-8 md:flex-row md:gap-16">
           <div className="flex flex-col gap-4 md:flex-[2]">
             <p className="text-2xl font-bold">Description</p>
-            <p className="prose text-sm dark:prose-invert">
+            <div className="prose text-sm dark:prose-invert">
               <PortableText value={projectDoc.description} />
-            </p>
+            </div>
           </div>
           <div className="flex flex-col gap-8 md:flex-1">
             <div className="flex flex-col gap-4">
