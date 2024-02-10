@@ -1,5 +1,5 @@
 import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
+import { structureTool } from "sanity/structure";
 import schemas from "./sanity/schemas";
 import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
@@ -13,7 +13,7 @@ const config = defineConfig({
   basePath: "/admin",
 
   plugins: [
-    deskTool({
+    structureTool({
       structure: (S, context) => {
         return S.list()
           .title("Content")
