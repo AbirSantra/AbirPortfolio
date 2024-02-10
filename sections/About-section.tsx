@@ -1,6 +1,6 @@
 import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
-import AbirDp from "@/public/images/abir-dp.png";
+import AbirDp from "@/public/images/profile-v3.jpg";
 import { LinkButton } from "@/components/LinkButton";
 import CVDownloadIcon from "@/public/images/cv-download-icon.svg";
 
