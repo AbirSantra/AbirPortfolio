@@ -116,37 +116,44 @@ export const getAllProjects = async (): Promise<Project[]> => {
 /* Get Hashnode Blogs */
 export const getFeaturedBlogs = async (): Promise<Blog[]> => {
   const query = `
-    query GetFeaturedBlogs($page: Int!){
-      user(username: "AbirSantra"){
-        publication{
-          posts(page: $page){
-            title,
-            brief,
-            slug,
-            coverImage,
-            dateAdded,
+    query GetFeaturedBlogs{
+  publication(host: "abirsantra.hashnode.dev") {
+    id
+    posts(first: 4) {
+      edges {
+        node {
+          id
+          title
+          brief
+          author {
+            name
+            profilePicture
           }
+          coverImage {
+            url
+          }
+          publishedAt
+          slug
         }
       }
     }
+  }
+}
   `;
 
-  const variables = { page: 0 };
-
-  const data = await fetch("https://api.hashnode.com/", {
+  const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query,
-      variables,
     }),
   });
 
   const result = await data.json();
 
-  const blogDocs = result.data.user.publication.posts.slice(0, 4);
+  const blogDocs = result.data.publication.posts.edges;
 
   return blogDocs;
 };
@@ -154,37 +161,44 @@ export const getFeaturedBlogs = async (): Promise<Blog[]> => {
 /* Get all blogs */
 export const getAllBlogs = async (): Promise<Blog[]> => {
   const query = `
-    query GetFeaturedBlogs($page: Int!){
-      user(username: "AbirSantra"){
-        publication{
-          posts(page: $page){
-            title,
-            brief,
-            slug,
-            coverImage,
-            dateAdded,
+    query GetFeaturedBlogs{
+  publication(host: "abirsantra.hashnode.dev") {
+    id
+    posts(first: 0) {
+      edges {
+        node {
+          id
+          title
+          brief
+          author {
+            name
+            profilePicture
           }
+          coverImage {
+            url
+          }
+          publishedAt
+          slug
         }
       }
     }
+  }
+}
   `;
 
-  const variables = { page: 0 };
-
-  const data = await fetch("https://api.hashnode.com/", {
+  const data = await fetch("https://gql.hashnode.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       query,
-      variables,
     }),
   });
 
   const result = await data.json();
 
-  const blogDocs = result.data.user.publication.posts;
+  const blogDocs = result.data.publication.posts.edges;
 
   return blogDocs;
 };

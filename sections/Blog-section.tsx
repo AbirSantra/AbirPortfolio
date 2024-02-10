@@ -16,7 +16,7 @@ export const BlogSection = async () => {
         />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {blogDocs.map((blog) => (
-            <BlogCard data={blog} key={blog._id} />
+            <BlogCard data={blog} key={blog.node.id} />
           ))}
         </div>
         <div className="ml-auto">
