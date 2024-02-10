@@ -9,7 +9,7 @@ const config = defineConfig({
 
   projectId: "m1lgynxf",
   dataset: "production",
-  apiVersion: "2023-08-15",
+  apiVersion: "2023-02-10",
   basePath: "/admin",
 
   plugins: [
