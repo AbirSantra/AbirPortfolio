@@ -18,11 +18,18 @@ import { HiRocketLaunch } from "react-icons/hi2";
 import Logo from "./Logo";
 import { useEffect, useRef, useState } from "react";
 import { Tooltip } from "./Tooltip";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Navbar = () => {
   const [theme, setTheme] = useState<string | null>(null);
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     /* Theme Setter */
@@ -42,23 +49,6 @@ const Navbar = () => {
     }
   }, []);
 
-  /* Menu Closer */
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
-    };
-    if (isMenuOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
-    } else {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    }
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, [isMenuOpen]);
-
   /* Theme switcher */
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -70,11 +60,6 @@ const Navbar = () => {
       localStorage.setItem("theme", "dark");
       setTheme("dark");
     }
-  };
-
-  /* Menu Toggler */
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
   };
 
   /* Menu List */
@@ -102,35 +87,38 @@ const Navbar = () => {
             <BsFillMoonStarsFill className="animate-spin-once" />
           )}
         </button>
-        <button onClick={toggleMenu} aria-label="Toggle Menubar">
-          {isMenuOpen ? (
-            <BsGrid className="animate-spin-once" />
-          ) : (
-            <BsGridFill className="animate-spin-once" />
-          )}
-        </button>
-      </div>
-
-      {/* Menu */}
-      <div
-        className={`absolute top-20 flex flex-col items-center justify-center gap-6 rounded-lg bg-white px-4 py-6 text-xl shadow-md duration-150 dark:bg-neutral-800 ${
-          isMenuOpen ? "left-6 opacity-100" : "-left-20 opacity-0"
-        }`}
-        onClick={toggleMenu}
-        ref={menuRef}
-      >
-        {menuList.map((item, index) => (
-          <Link
-            href={item.link}
-            key={index}
-            className="duration-300 ease-in-out hover:text-sky-500"
-            aria-label={item.name}
-          >
-            <Tooltip text={item.name} direction="right">
-              {item.icon}
-            </Tooltip>
-          </Link>
-        ))}
+        <Dialog>
+          <DialogTrigger asChild>
+            <button aria-label="Toggle Menubar">
+              <BsGridFill className="animate-spin-once" />
+            </button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle className="text-left">
+                <Logo variant="large" />
+              </DialogTitle>
+            </DialogHeader>
+            <div className="grid w-full grid-cols-3 grid-rows-2 gap-2">
+              {menuList.map((item, index) => (
+                <DialogClose
+                  key={index}
+                  className="flex aspect-square items-center justify-center rounded-md border border-neutral-900 duration-200 ease-in-out hover:border-sky-500 hover:text-sky-500"
+                  asChild
+                >
+                  <Link
+                    href={item.link}
+                    aria-label={item.name}
+                    className="flex flex-col items-center justify-center gap-4 text-2xl"
+                  >
+                    <p>{item.icon}</p>
+                    <p className="text-xs">{item.name}</p>
+                  </Link>
+                </DialogClose>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </nav>
   );

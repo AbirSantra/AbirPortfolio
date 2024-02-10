@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.0.4",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@sanity/client": "^6.12.4",
     "@sanity/orderable-document-list": "^1.1.0",
     "@tailwindcss/line-clamp": "^0.4.4",
@@ -17,8 +18,11 @@
     "@types/react": "18.2.6",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
+    "lucide-react": "^0.323.0",
     "moment": "^2.29.4",
     "next": "^13.4.19",
     "next-sanity": "^5.5.11",
@@ -28,7 +32,9 @@
     "react-icons": "^4.10.1",
     "sanity": "^3.28.0",
     "styled-components": "^6.0.2",
+    "tailwind-merge": "^2.2.1",
     "tailwindcss": "3.3.2",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "5.0.4"
   },
   "devDependencies": {
