@@ -90,10 +90,10 @@ const Navbar = () => {
         <Dialog>
           <DialogTrigger asChild>
             <button aria-label="Toggle Menubar">
-              <BsGridFill className="animate-spin-once" />
+              <BsGridFill className="hover:animate-spin-once" />
             </button>
           </DialogTrigger>
-          <DialogContent>
+          <DialogContent className="border-neutral-900">
             <DialogHeader>
               <DialogTitle className="text-left">
                 <Logo variant="large" />
@@ -103,7 +103,7 @@ const Navbar = () => {
               {menuList.map((item, index) => (
                 <DialogClose
                   key={index}
-                  className="flex aspect-square items-center justify-center rounded-md border border-neutral-900 duration-200 ease-in-out hover:border-sky-500 hover:text-sky-500"
+                  className="flex aspect-square items-center justify-center rounded-md border duration-200 ease-in-out hover:border-sky-500 hover:text-sky-500 dark:border-neutral-900"
                   asChild
                 >
                   <Link
