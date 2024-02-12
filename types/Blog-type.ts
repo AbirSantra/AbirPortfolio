@@ -6,7 +6,7 @@ export type Blog = {
     coverImage: {
       url: string;
     };
-    dateAdded: Date;
+    publishedAt: Date;
     brief: string;
   };
 };
