@@ -93,7 +93,7 @@ const Navbar = () => {
               <BsGridFill className="hover:animate-spin-once" />
             </button>
           </DialogTrigger>
-          <DialogContent className="border-neutral-900">
+          <DialogContent className="border-neutral-900 bg-neutral-50 dark:bg-neutral-900">
             <DialogHeader>
               <DialogTitle className="text-left">
                 <Logo variant="large" />
@@ -103,7 +103,7 @@ const Navbar = () => {
               {menuList.map((item, index) => (
                 <DialogClose
                   key={index}
-                  className="flex aspect-square items-center justify-center rounded-md border duration-200 ease-in-out hover:border-sky-500 hover:text-sky-500 dark:border-neutral-900"
+                  className="flex aspect-square items-center justify-center rounded-md border duration-200 ease-in-out hover:border-sky-500 hover:text-sky-500 dark:border-neutral-800"
                   asChild
                 >
                   <Link
