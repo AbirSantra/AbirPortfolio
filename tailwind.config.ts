@@ -21,6 +21,7 @@ const config = {
     extend: {
       fontFamily: {
         Poppins: ["Poppins", "sans-serif"],
+        Caveat: ["Caveat", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
