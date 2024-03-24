@@ -7,7 +7,7 @@ export const HeroSection = () => {
         <p className="font-Caveat text-2xl font-semibold sm:text-4xl">
           👋 <span className="gradient-text">Hello there! I'm</span>
         </p>
-        <p className="gradient-text-neutral text-center text-5xl font-medium sm:text-6xl md:text-7xl lg:text-9xl">
+        <p className="gradient-text-neutral text-center text-5xl font-medium sm:text-6xl md:text-7xl lg:text-8xl">
           Abir Santra.
         </p>
         <p className="gradient-text font-Caveat text-2xl font-semibold sm:text-4xl">

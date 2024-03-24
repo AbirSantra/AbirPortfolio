@@ -62,31 +62,60 @@ const Navbar = () => {
     }
   };
 
+  /* Navbar Transparency Setter */
+  const [hasScrolled, setHasScrolled] = useState<boolean>(false);
+  const handleScroll = () => {
+    if (window.scrollY >= 80) {
+      setHasScrolled(true);
+    } else {
+      setHasScrolled(false);
+    }
+  };
+  window.addEventListener("scroll", handleScroll);
+
   /* Menu List */
   const menuList = [
-    { name: "About", icon: <FaUser />, link: "/#about" },
-    { name: "Experience", icon: <FaBriefcase />, link: "/#experience" },
-    { name: "Tech Stack", icon: <FaTools />, link: "/#techstack" },
+    // { name: "About", icon: <FaUser />, link: "/#about" },
+    { name: "Work", icon: <FaBriefcase />, link: "/#experience" },
+    { name: "Tech", icon: <FaTools />, link: "/#techstack" },
     { name: "Projects", icon: <HiRocketLaunch />, link: "/#projects" },
     { name: "Blogs", icon: <FaPen />, link: "/#blogs" },
-    { name: "Contact", icon: <FaPhoneAlt />, link: "/#contact" },
   ];
 
   return (
-    <nav className="glassmorph flex h-16 w-full items-center justify-between border-none bg-neutral-50/60 p-6 transition-all duration-200 ease-linear dark:bg-neutral-900/60">
+    <nav
+      className={`${hasScrolled && "glassmorph"} flex w-fit items-center justify-between gap-10 rounded-full px-6 py-4 transition-all duration-200 ease-linear md:gap-12`}
+    >
       {/* Logo */}
       <Link href="/">
         <Logo variant="small" />
       </Link>
-      {/* Buttons */}
-      <div className="flex items-center justify-center gap-8 text-xl">
-        <button onClick={toggleTheme} aria-label="Theme Switcher">
-          {theme === "dark" ? (
-            <BsFillSunFill className="animate-spin-once" />
-          ) : (
-            <BsFillMoonStarsFill className="animate-spin-once" />
-          )}
-        </button>
+
+      {menuList.map((item, index) => (
+        <Link
+          key={index}
+          href={item.link}
+          aria-label={item.name}
+          className="flex flex-col items-center justify-center gap-4"
+        >
+          <p className="flex text-xl md:hidden">{item.icon}</p>
+          <p className="font-base hidden text-lg md:flex">{item.name}</p>
+        </Link>
+      ))}
+
+      <button
+        onClick={toggleTheme}
+        className="text-xl"
+        aria-label="Theme Switcher"
+      >
+        {theme === "dark" ? (
+          <BsFillSunFill className="animate-spin-once" />
+        ) : (
+          <BsFillMoonStarsFill className="animate-spin-once" />
+        )}
+      </button>
+
+      {/* <div className="flex items-center justify-center gap-8 text-xl">
         <Dialog>
           <DialogTrigger asChild>
             <button aria-label="Toggle Menubar">
@@ -119,7 +148,7 @@ const Navbar = () => {
             </div>
           </DialogContent>
         </Dialog>
-      </div>
+      </div> */}
     </nav>
   );
 };
