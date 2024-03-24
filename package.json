@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^3.0.4",
+    "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-dialog": "^1.0.5",
     "@sanity/client": "^6.12.4",
     "@sanity/orderable-document-list": "^1.1.0",

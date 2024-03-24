@@ -11,15 +11,15 @@ const EducationCard = ({ data }: { data: Education }) => {
 
   return (
     <div className="group relative">
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between gap-4 ">
           <p className="font-semibold md:text-xl">{data.institution}</p>
-          <p className="whitespace-nowrap text-xs font-medium tracking-tight text-neutral-400">
+          <p className="whitespace-nowrap text-xs font-medium tracking-tight text-neutral-700 dark:text-neutral-400">
             {startDate} - {endDate}
           </p>
         </div>
         <p className="gradient-text text-sm font-medium">{data.field}</p>
-        <p className="flex items-center gap-1 text-xs text-neutral-400">
+        <p className="flex items-center gap-1 text-xs text-neutral-700 dark:text-neutral-400">
           <FaLocationDot /> {data.location}
         </p>
         <p className="mt-2 text-xs">
