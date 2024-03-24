@@ -71,7 +71,10 @@ const Navbar = () => {
       setHasScrolled(false);
     }
   };
-  window.addEventListener("scroll", handleScroll);
+
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", handleScroll);
+  }
 
   /* Menu List */
   const menuList = [
