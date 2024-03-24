@@ -87,11 +87,11 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${hasScrolled && "glassmorph"} flex w-fit items-center justify-between gap-8 rounded-full px-6 py-4 transition-all duration-200 ease-linear md:gap-12`}
+      className={`${hasScrolled && "glassmorph"} flex w-fit items-center justify-between gap-6 rounded-full px-4 py-2 transition-all duration-300 ease-linear sm:px-6 sm:py-4 md:gap-12`}
     >
       {/* Logo */}
       <Link href="/">
-        <Logo variant="small" />
+        <Logo variant="small" icon />
       </Link>
 
       {menuList.map((item, index) => (
@@ -101,8 +101,8 @@ const Navbar = () => {
           aria-label={item.name}
           className="flex flex-col items-center justify-center gap-4"
         >
-          <p className="flex text-lg sm:text-xl md:hidden">{item.icon}</p>
-          <p className="font-base hidden text-lg md:flex">{item.name}</p>
+          {/* <p className="flex text-lg sm:text-xl md:hidden">{item.icon}</p> */}
+          <p className="text-sm sm:text-lg md:flex">{item.name}</p>
         </Link>
       ))}
 

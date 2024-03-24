@@ -1,4 +1,10 @@
-const Logo = ({ variant }: { variant: "small" | "large" }) => {
+const Logo = ({
+  variant,
+  icon,
+}: {
+  variant: "small" | "large";
+  icon?: boolean;
+}) => {
   return (
     <div
       className={`flex flex-col font-medium -tracking-wider ${
@@ -6,8 +12,9 @@ const Logo = ({ variant }: { variant: "small" | "large" }) => {
       }`}
     >
       <div className="flex">
-        <p>abir</p>
-        <p className="gradient-text">._</p>
+        {icon ? <p className="sm:text-2xl">a</p> : <p>abir</p>}
+
+        <p className="gradient-text sm:text-2xl">.</p>
       </div>
       {variant === "large" && (
         <p className="gradient-text mb-4 text-sm font-medium tracking-tighter">
