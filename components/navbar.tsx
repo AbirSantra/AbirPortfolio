@@ -4,6 +4,7 @@ import { useState } from "react";
 import Logo from "./logo";
 import { cn } from "@/lib/utils";
 import { menuList } from "@/lib/menu-items";
+import ThemeToggle from "./theme-toggle";
 
 const Navbar = () => {
   /* Navbar Transparency Setter */
@@ -24,7 +25,7 @@ const Navbar = () => {
     <nav
       className={cn(
         "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-linear sm:px-8 sm:py-3 md:gap-12",
-        !hasScrolled && "glassmorph"
+        hasScrolled && "glassmorph"
       )}
     >
       <Link href="/">
@@ -38,9 +39,11 @@ const Navbar = () => {
           aria-label={item.name}
           className="flex flex-col items-center justify-center gap-4"
         >
-          <p className="sm:text-base font-semibold text-sm">{item.name}</p>
+          <p className="sm:text-lg font-medium text-sm">{item.name}</p>
         </Link>
       ))}
+
+      <ThemeToggle />
     </nav>
   );
 };

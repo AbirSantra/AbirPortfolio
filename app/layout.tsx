@@ -56,7 +56,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="sticky z-50 flex justify-center items-center p-4 py-6">
+          <header className="sticky top-0 z-50 flex justify-center items-center p-4 py-6">
             <Navbar />
           </header>
           <main className="mx-auto w-full max-w-3xl">{children}</main>
