@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { Figtree, Geist, Geist_Mono } from "next/font/google";
+import { Figtree, Geist, Geist_Mono, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
+import LightRays from "@/components/backgrounds/light-rays";
 
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
+const ibmPlexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
+  display: "swap",
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -48,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figtree.variable} font-sans antialiased scroll-smooth dark:bg-zinc-900`}
+        className={`${figtree.variable} ${ibmPlexSans.variable} font-primary antialiased scroll-smooth`}
       >
         <ThemeProvider
           attribute="class"
@@ -56,10 +64,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="sticky top-0 z-50 flex justify-center items-center p-4 py-6">
+          <header className="absolute top-6 inset-x-0 z-50 flex justify-center items-center">
             <Navbar />
           </header>
-          <main className="mx-auto w-full max-w-3xl">{children}</main>
+          <main className="mx-auto w-full">{children}</main>
         </ThemeProvider>
       </body>
     </html>
