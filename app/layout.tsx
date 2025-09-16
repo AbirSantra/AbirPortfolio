@@ -64,9 +64,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="absolute top-6 inset-x-0 z-50 flex justify-center items-center">
-            <Navbar />
-          </header>
+          <Navbar />
           <main className="mx-auto w-full">{children}</main>
           <Toaster />
         </ThemeProvider>
