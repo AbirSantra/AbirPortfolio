@@ -3,8 +3,13 @@
 import Image from "next/image";
 import LightRays from "../backgrounds/light-rays";
 import { useTheme } from "next-themes";
+import { HeroContent } from "@/lib/hero-data";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  content: HeroContent;
+}
+
+const HeroSection = ({ content }: HeroSectionProps) => {
   const { theme } = useTheme();
   const isLightMode = theme === "light";
 
@@ -13,30 +18,30 @@ const HeroSection = () => {
       <div className="overflow-hidden rounded-full size-30 sm:size-40">
         <Image
           src={"/images/abir-gemini-2.png"}
-          alt="Avatar"
-          width={80}
-          height={80}
+          alt="Abir Santra - Software Engineer"
+          width={256}
+          height={256}
           className="w-full h-full object-cover"
+          priority
         />
       </div>
 
-      <div className="w-full flex flex-col gap-0 text-5xl sm:text-6xl font-extrabold">
-        <p>Hi, I&#39;m Abir</p>
-        <p>Developer & Designer</p>
-      </div>
+      <h1 className="text-5xl sm:text-6xl flex flex-col font-extrabold">
+        <span>{content.headline1}</span>
+        <span>{content.headline2}</span>
+      </h1>
 
       <p className="text-muted-foreground font-secondary text-base sm:text-xl">
-        I ship fast, write clean code, and deliver solutions that scale. Ready
-        to build the next big thing!
+        {content.description}
       </p>
 
-      {/* {!isLightMode ? (
+      {!isLightMode ? (
         <div className="absolute inset-0 w-full -z-10 flex justify-center items-center">
           <LightRays
             raysOrigin="top-center"
             raysColor="#ffffff"
             raysSpeed={0.5}
-            lightSpread={0.4}
+            lightSpread={0.2}
             rayLength={2}
             followMouse={false}
             mouseInfluence={0.1}
@@ -45,7 +50,7 @@ const HeroSection = () => {
             className="custom-rays"
           />
         </div>
-      ) : null} */}
+      ) : null}
     </div>
   );
 };

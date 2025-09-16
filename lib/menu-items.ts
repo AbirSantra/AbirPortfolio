@@ -6,4 +6,9 @@ export const menuList = [
   { name: "Blogs", link: "/#blogs" },
 ];
 
-export const adminMenuList = [];
+export const adminMenuList = [
+  { name: "Hero", link: "/admin/hero" },
+  { name: "Work", link: "/admin/work" },
+  { name: "Tech", link: "/admin/techstack" },
+  { name: "Projects", link: "/admin/projects" },
+];
