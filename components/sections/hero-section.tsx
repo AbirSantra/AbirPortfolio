@@ -26,7 +26,7 @@ const HeroSection = ({ content }: HeroSectionProps) => {
         />
       </div>
 
-      <h1 className="text-5xl sm:text-6xl flex flex-col font-extrabold">
+      <h1 className="text-5xl sm:text-6xl flex flex-col font-extrabold font-primary">
         <span>{content.headline1}</span>
         <span>{content.headline2}</span>
       </h1>

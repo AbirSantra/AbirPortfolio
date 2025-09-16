@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
 import LightRays from "@/components/backgrounds/light-rays";
+import { Toaster } from "@/components/ui/sonner";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -56,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${figtree.variable} ${ibmPlexSans.variable} font-primary antialiased scroll-smooth`}
+        className={`${figtree.variable} ${ibmPlexSans.variable} font-secondary antialiased scroll-smooth`}
       >
         <ThemeProvider
           attribute="class"
@@ -68,6 +69,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className="mx-auto w-full">{children}</main>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav
       className={cn(
-        "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-linear sm:px-8 sm:py-3 md:gap-12",
+        "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-linear sm:px-8 sm:py-3 md:gap-12 font-primary",
         hasScrolled && "glassmorph"
       )}
     >
