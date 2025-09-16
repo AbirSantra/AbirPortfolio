@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Figtree, Geist, Geist_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Figtree, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
-import LightRays from "@/components/backgrounds/light-rays";
 import { Toaster } from "@/components/ui/sonner";
 
 const figtree = Figtree({

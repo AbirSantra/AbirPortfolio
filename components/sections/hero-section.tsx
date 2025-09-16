@@ -3,13 +3,8 @@
 import Image from "next/image";
 import LightRays from "../backgrounds/light-rays";
 import { useTheme } from "next-themes";
-import { HeroContent } from "@/lib/hero-data";
 
-interface HeroSectionProps {
-  content: HeroContent;
-}
-
-const HeroSection = ({ content }: HeroSectionProps) => {
+const HeroSection = () => {
   const { theme } = useTheme();
   const isLightMode = theme === "light";
 
@@ -27,12 +22,13 @@ const HeroSection = ({ content }: HeroSectionProps) => {
       </div>
 
       <h1 className="text-5xl sm:text-6xl flex flex-col font-extrabold font-primary">
-        <span>{content.headline1}</span>
-        <span>{content.headline2}</span>
+        <span>Hi, I&apos;m Abir</span>
+        <span>Developer & Designer</span>
       </h1>
 
       <p className="text-muted-foreground font-secondary text-base sm:text-xl">
-        {content.description}
+        I ship fast, write clean code, and deliver solutions that scale. Ready
+        to build the next big thing!
       </p>
 
       {!isLightMode ? (
