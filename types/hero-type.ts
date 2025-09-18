@@ -1,4 +1,5 @@
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { PortableTextBlock } from "sanity";
 
 export interface HeroContent {
   _id: string;
@@ -7,5 +8,13 @@ export interface HeroContent {
   description: string;
   profileImage: SanityImageSource & {
     alt?: string;
+  };
+  about: PortableTextBlock[];
+  resume: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+    fileName?: string;
   };
 }

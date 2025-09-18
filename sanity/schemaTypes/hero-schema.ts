@@ -39,6 +39,31 @@ const heroContent = {
         },
       ],
     },
+    {
+      name: "about",
+      title: "About Section",
+      description: "Detailed text for the About section",
+      type: "array",
+      of: [{ type: "block" }],
+    },
+    {
+      name: "resume",
+      title: "Resume",
+      description: "Upload your resume/CV (PDF format recommended)",
+      type: "file",
+      options: {
+        accept: ".pdf",
+      },
+      fields: [
+        {
+          name: "fileName",
+          title: "File Name",
+          type: "string",
+          description: "Display name for the resume file",
+          initialValue: "Resume",
+        },
+      ],
+    },
   ],
 };
 

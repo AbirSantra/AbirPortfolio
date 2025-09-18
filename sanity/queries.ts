@@ -14,7 +14,15 @@ export const getHeroContent = async (): Promise<HeroContent> => {
       headline1,
       headline2,
       description,
-      profileImage
+      profileImage,
+      about,
+      resume{
+        asset->{
+          _id,
+          url
+        },
+        fileName
+      }
     }`
   );
   return heroDoc;

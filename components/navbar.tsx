@@ -29,15 +29,15 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   if (isOnAdminRoute) return null;
 
   return (
-    <header className="absolute top-6 inset-x-0 z-50 flex justify-center items-center">
+    <header className="sticky top-6 inset-x-0 z-50 flex justify-center items-center">
       <nav
         className={cn(
-          "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-linear sm:px-8 sm:py-3 md:gap-12 font-primary",
+          "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-in-out sm:px-8 sm:py-3 md:gap-12 font-primary border-[1px] border-transparent",
           hasScrolled && "glassmorph"
         )}
       >

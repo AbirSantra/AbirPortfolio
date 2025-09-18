@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -124,15 +125,15 @@
 
 @layer utilities {
   .gradient-bg {
-    @apply bg-gradient-to-r from-sky-400 to-blue-500;
+    @apply bg-gradient-to-r from-sky-500 to-blue-600;
   }
 
   .gradient-bg-rev {
-    @apply bg-gradient-to-l from-sky-400 to-blue-500;
+    @apply bg-gradient-to-l from-sky-500 to-blue-600;
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-sky-500 to-blue-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-neutral {
