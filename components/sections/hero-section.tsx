@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroBackground from "../backgrounds/hero-background";
 import { getHeroContent } from "@/sanity/queries";
 import { urlFor } from "@/sanity/lib/image";
+import Socials from "../socials";
 
 const HeroSection = async () => {
   const heroContent = await getHeroContent();
@@ -40,6 +41,8 @@ const HeroSection = async () => {
       <p className="text-muted-foreground font-secondary text-base sm:text-xl">
         {heroContent.description}
       </p>
+
+      <Socials />
 
       <HeroBackground />
     </div>

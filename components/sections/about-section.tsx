@@ -12,7 +12,7 @@ const AboutSection = async () => {
         title="About Me"
         subtitle="I love building things out of code"
       />
-      <div className="prose dark:prose-invert text-justify">
+      <div className="prose dark:prose-invert text-justify font-light">
         <PortableText value={aboutContent.about} />
       </div>
       <DownloadCV pdf={aboutContent.resume} />
