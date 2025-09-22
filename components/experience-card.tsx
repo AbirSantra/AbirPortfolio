@@ -33,7 +33,7 @@ const ExperienceCard = ({ data }: { data: Experience }) => {
         <p className="flex items-center gap-1 text-xs text-muted-foreground font-medium">
           <MapPinIcon className="size-4" /> {data.location}
         </p>
-        <span className="text-xs prose dark:prose-invert max-w-none">
+        <span className="text-xs prose dark:prose-invert max-w-none text-justify">
           <PortableText value={data.description} />
         </span>
       </div>
