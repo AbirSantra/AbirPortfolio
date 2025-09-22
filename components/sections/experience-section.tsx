@@ -1,9 +1,5 @@
 import { getAllExperiences } from "@/sanity/queries";
 import { SectionHeader } from "../section-header";
-import moment from "moment";
-import { MapPinIcon } from "lucide-react";
-import { PortableText } from "next-sanity";
-import Image from "next/image";
 import ExperienceCard from "../experience-card";
 
 const ExperienceSection = async () => {
