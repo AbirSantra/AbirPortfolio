@@ -1,4 +1,5 @@
 import AboutSection from "@/components/sections/about-section";
+import ExperienceSection from "@/components/sections/experience-section";
 import HeroSection from "@/components/sections/hero-section";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div className="w-full flex flex-col items-center">
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
     </div>
   );
 }
