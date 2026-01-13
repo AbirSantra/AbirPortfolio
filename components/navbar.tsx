@@ -14,6 +14,14 @@ const Navbar = () => {
   const [hasScrolled, setHasScrolled] = useState<boolean>(false);
 
   useEffect(() => {
+    // Check initial scroll position on mount
+    const checkScrollPosition = () => {
+      setHasScrolled(window.scrollY >= 80);
+    };
+
+    // Check immediately on mount
+    checkScrollPosition();
+
     const handleScroll = () => {
       if (window.scrollY >= 80) {
         setHasScrolled(true);

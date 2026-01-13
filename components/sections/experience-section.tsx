@@ -16,7 +16,7 @@ const ExperienceSection = async () => {
       />
 
       <div className="w-full relative flex">
-        <div className="shrink-0 left-3 sm:left-5 absolute bg-muted rounded-full w-1 h-full"></div>
+        <div className="shrink-0 left-4 sm:left-6 absolute bg-muted rounded-full w-0.5 h-full"></div>
         <div className="w-full flex flex-col gap-16">
           {experienceContent.map((data) => {
             return <ExperienceCard key={data._id} data={data} />;

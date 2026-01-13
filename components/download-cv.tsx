@@ -17,7 +17,7 @@ const DownloadCV = ({
       <Link
         href={`${pdf.asset.url}?dl=${pdf.fileName || "Resume"}`}
         download
-        className="gradient-bg text-white w-fit font-semibold hover:cursor-pointer"
+        className="gradient-bg text-white w-fit font-semibold hover:cursor-pointer active:scale-105 transition-all duration-200"
       >
         <FileDownIcon className="size-5" />
         Download CV
