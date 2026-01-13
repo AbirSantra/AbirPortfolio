@@ -19,7 +19,7 @@ const ExperienceCard = ({ data }: { data: Experience }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="w-full flex flex-col gap-2">
+      <div className="w-full flex flex-col gap-2 glassmorph p-6 rounded-lg">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="font-bold font-primary text-lg">{data.company}</p>
