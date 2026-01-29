@@ -8,7 +8,7 @@ const HeroSection = async () => {
   const heroContent = await getHeroContent();
 
   return (
-    <div className="h-dvh flex w-full justify-center items-center text-center p-6 py-28 flex-col gap-8 max-w-2xl">
+    <div className="h-dvh flex w-full justify-center items-center text-center p-6 py-28 flex-col gap-8 section-max-width">
       <div className="overflow-hidden rounded-full size-30 sm:size-40">
         <Image
           src={urlFor(heroContent.profileImage)

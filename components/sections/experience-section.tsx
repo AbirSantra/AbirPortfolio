@@ -7,7 +7,7 @@ const ExperienceSection = async () => {
 
   return (
     <div
-      className="flex w-full justify-center p-6 py-28 flex-col gap-8 max-w-2xl"
+      className="flex w-full justify-center p-6 py-28 flex-col gap-8 section-max-width"
       id="work"
     >
       <SectionHeader

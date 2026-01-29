@@ -129,6 +129,10 @@ body {
 }
 
 @layer utilities {
+  .section-max-width {
+    @apply max-w-3xl;
+  }
+
   .gradient-bg {
     @apply bg-gradient-to-r from-sky-500 to-blue-600;
   }

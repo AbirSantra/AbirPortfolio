@@ -7,7 +7,7 @@ const AboutSection = async () => {
   const aboutContent = await getHeroContent();
 
   return (
-    <div className="flex w-full justify-center p-6 py-28 flex-col gap-8 max-w-2xl">
+    <div className="flex w-full justify-center p-6 py-28 flex-col gap-8 section-max-width">
       <SectionHeader
         title="About Me"
         subtitle="I love building things out of code"

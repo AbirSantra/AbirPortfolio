@@ -12,7 +12,7 @@ const ProjectCard = ({
   return (
     <Link
       href={`/projects/${data.slug}`}
-      className={`group relative flex overflow-hidden rounded-xl flex-col p-3 glassmorph gap-2`}
+      className={`group relative flex overflow-hidden rounded-xl flex-col p-3 glassmorph gap-2 @container`}
     >
       <div className="w-full aspect-video rounded-md overflow-hidden">
         <Image
@@ -24,8 +24,12 @@ const ProjectCard = ({
         />
       </div>
       <div className={`flex w-full flex-col border-none duration-200 p-2`}>
-        <p className={`font-extrabold font-primary text-lg`}>{data.title}</p>
-        <p className={`text-xs text-muted-foreground`}>{data.tagline}</p>
+        <p className={`font-extrabold font-primary text-lg @sm:text-2xl`}>
+          {data.title}
+        </p>
+        <p className={`text-xs text-muted-foreground @sm:text-base`}>
+          {data.tagline}
+        </p>
       </div>
     </Link>
   );

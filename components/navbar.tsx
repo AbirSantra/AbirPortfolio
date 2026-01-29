@@ -46,7 +46,7 @@ const Navbar = () => {
       <nav
         className={cn(
           "flex w-fit items-center justify-between gap-6 rounded-full px-6 py-2 transition-all duration-300 ease-in-out sm:px-8 sm:py-3 md:gap-12 font-primary border-[1px] border-transparent",
-          hasScrolled && "glassmorph"
+          hasScrolled && "glassmorph",
         )}
       >
         <Link href="/">

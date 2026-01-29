@@ -8,7 +8,7 @@ const TechSection = async () => {
   return (
     <div
       id="tech"
-      className="flex w-full justify-center p-6 py-28 flex-col gap-8 max-w-2xl"
+      className="flex w-full justify-center p-6 py-28 flex-col gap-8 section-max-width"
     >
       <SectionHeader title="Tech Stack" subtitle="My go-to technologies" />
       <div className="flex w-full flex-wrap gap-2">

@@ -11,7 +11,7 @@ const ProjectSection = async () => {
 
   return (
     <div
-      className="flex w-full justify-center p-6 py-28 flex-col gap-8 max-w-2xl"
+      className="flex w-full justify-center p-6 py-28 flex-col gap-8 section-max-width"
       id="projects"
     >
       <SectionHeader title="Featured Projects" subtitle="I'm proud of these" />
